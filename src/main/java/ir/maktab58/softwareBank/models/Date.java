@@ -30,7 +30,7 @@ public class Date implements Comparable<Date> {
     public int compareTo(Date o) {
         return ((year - o.year) * 365 +
                 calcSpentDaysTillMonth(month) - calcSpentDaysTillMonth(o.month) +
-                day - o.day + 1);
+                day - o.day);
     }
 
     private int calcSpentDaysTillMonth(int month) {
