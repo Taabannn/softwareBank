@@ -1,16 +1,15 @@
 package ir.maktab58.softwareBank.service;
 
-import ir.maktab58.softwareBank.models.Borrow;
 import ir.maktab58.softwareBank.models.Date;
 import ir.maktab58.softwareBank.models.Disc;
 import ir.maktab58.softwareBank.models.Person;
 import ir.maktab58.softwareBank.models.eventsfactory.SBEventFactory;
 import ir.maktab58.softwareBank.models.eventsfactory.SoftwareBankEvent;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author Taban Soleymani
@@ -18,9 +17,9 @@ import java.util.Scanner;
 public class BankService {
     private final @Getter long penalty;
     private final @Getter int numOfEvents;
-    private @Getter List<SoftwareBankEvent> events = new ArrayList<>();
-    private @Getter List<Person> members = new ArrayList<>();
-    private @Getter List<Disc> discs = new ArrayList<>();
+    private @Getter @Setter List<SoftwareBankEvent> events = new ArrayList<>();
+    private @Getter @Setter List<Person> members = new ArrayList<>();
+    private @Getter @Setter List<Disc> discs = new ArrayList<>();
 
     public BankService(int numOfEvents, long penalty) {
         this.numOfEvents = numOfEvents;
@@ -32,6 +31,7 @@ public class BankService {
             int day = Integer.parseInt(event[0]);
             int month = Integer.parseInt(event[1]);
             int year = 1300 + Integer.parseInt(event[2]);
+            Date.validateDate(year,month,day);
             Date dateOfEvent = new Date(day, month, year);
             Person member = new Person(event[3]);
             Disc disc = new Disc(event[4]);
