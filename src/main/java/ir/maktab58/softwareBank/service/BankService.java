@@ -39,7 +39,7 @@ public class BankService {
         }
     }
 
-    private void distinctEvent(Date dateOfEvent, Person member, Disc disc) {
+    public void distinctEvent(Date dateOfEvent, Person member, Disc disc) {
         if (!members.contains(member) && !discs.contains(disc)) {
             addEventMemberAndDiscNotExisted(dateOfEvent, member, disc);
             return;
@@ -57,7 +57,7 @@ public class BankService {
         }
     }
 
-    private void addEventWhenMemberAndDiscExist(Date dateOfEvent, Person member, Disc disc) {
+    public void addEventWhenMemberAndDiscExist(Date dateOfEvent, Person member, Disc disc) {
         int discIndex = discs.indexOf(disc);
         if (discs.get(discIndex).isBorrowed()) {
             events.add(SBEventFactory.getEvent("deliver", member, dateOfEvent, disc));
@@ -71,7 +71,7 @@ public class BankService {
         }
     }
 
-    private void addEventWhenMemberNotExisted(Date dateOfEvent, Person member, Disc disc) {
+    public void addEventWhenMemberNotExisted(Date dateOfEvent, Person member, Disc disc) {
         events.add(SBEventFactory.getEvent("borrow", member, dateOfEvent, disc));
         members.add(member);
         member.borrow(disc, dateOfEvent);
@@ -79,14 +79,14 @@ public class BankService {
         discs.get(index).setBorrowed(true);
     }
 
-    private void addEventWhenDiscNotExisted(Date dateOfEvent, Person member, Disc disc) {
+    public void addEventWhenDiscNotExisted(Date dateOfEvent, Person member, Disc disc) {
         events.add(SBEventFactory.getEvent("borrow", member, dateOfEvent, disc));
         int index = members.indexOf(member);
         members.get(index).borrow(disc, dateOfEvent);
         discs.add(disc);
     }
 
-    private void addEventMemberAndDiscNotExisted(Date dateOfEvent, Person member, Disc disc) {
+    public void addEventMemberAndDiscNotExisted(Date dateOfEvent, Person member, Disc disc) {
         events.add(SBEventFactory.getEvent("borrow", member, dateOfEvent, disc));
         members.add(member);
         member.borrow(disc, dateOfEvent);
