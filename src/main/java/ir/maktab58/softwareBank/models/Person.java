@@ -2,12 +2,10 @@ package ir.maktab58.softwareBank.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Predicate;
 
 /**
  * @author Taban Soleymani
@@ -20,6 +18,11 @@ public class Person {
 
     public Person(String name) {
         this.name = name;
+    }
+
+    public Person(String name, int numOfLateDays) {
+        this.name = name;
+        this.numOfLateDays = numOfLateDays;
     }
 
     public int getLateDays() {

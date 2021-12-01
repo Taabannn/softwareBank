@@ -6,16 +6,16 @@ import ir.maktab58.softwareBank.models.Person;
 import ir.maktab58.softwareBank.models.eventsfactory.BorrowEvent;
 import ir.maktab58.softwareBank.models.eventsfactory.DeliveryEvent;
 import ir.maktab58.softwareBank.models.eventsfactory.SoftwareBankEvent;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mock;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Taban Soleymani
@@ -64,7 +64,7 @@ public class ExtractEventsTest {
     public void givenValidElements_WhenExtractEventCalls_ThenArrayListOfEventsCreate(int numOfEvents, long penalty, List<String[]> events, List<SoftwareBankEvent> expectedEvents) {
         bankService = new BankService(numOfEvents, penalty);
         bankService.extractEvents(events);
-        Assertions.assertEquals(expectedEvents, bankService.getEvents());
+        assertEquals(expectedEvents, bankService.getEvents());
     }
 
     static Stream<Arguments> generateDataOfInvalidDate() {
@@ -80,7 +80,7 @@ public class ExtractEventsTest {
     @MethodSource("generateDataOfInvalidDate")
     public void givenInvalidDate_WhenExtractEventCalls_ThenIllegalArgumentExThrow(int numOfEvents, long penalty, List<String[]> events) {
         bankService = new BankService(numOfEvents, penalty);
-        Assertions.assertThrows(IllegalArgumentException.class, () -> bankService.extractEvents(events));
+        assertThrows(IllegalArgumentException.class, () -> bankService.extractEvents(events));
     }
 
     static Stream<Arguments> generateDataOfInvalidNumbers() {
@@ -96,7 +96,7 @@ public class ExtractEventsTest {
     @MethodSource("generateDataOfInvalidNumbers")
     public void givenInvalidNumber_WhenExtractEventCalls_ThenNumberFormatExceptionThrows(int numOfEvents, long penalty, List<String[]> events) {
         bankService = new BankService(numOfEvents, penalty);
-        Assertions.assertThrows(NumberFormatException.class, () -> bankService.extractEvents(events));
+        assertThrows(NumberFormatException.class, () -> bankService.extractEvents(events));
     }
 
 }
