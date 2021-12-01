@@ -30,10 +30,20 @@ public class Person {
     }
 
     public void deliver(Disc disc, Date deliveryDate) {
-        //TODO
+        int latency = 0;
+        for (Borrow borrow : listOfBorrowed) {
+            if (borrow.getDisc().equals(disc) && borrow.getDeliveryDate() == null) {
+                if (borrow.isLate(deliveryDate)) {
+                    latency = deliveryDate.compareTo(borrow.getBorrowingDate());
+                }
+            }
+        }
         Predicate<Borrow> borrowPredicate = borrow -> borrow.getDisc().equals(disc);
         listOfBorrowed.forEach(borrowed -> {
             listOfBorrowed.removeIf(borrowPredicate);
         });
+        if (latency > 7) {
+            numOfLateDays += latency - 7;
+        }
     }
 }
