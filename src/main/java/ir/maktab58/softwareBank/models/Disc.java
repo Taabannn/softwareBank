@@ -9,13 +9,13 @@ import java.util.Objects;
 /**
  * @author Taban Soleymani
  */
-@ToString
 public class Disc {
     private @Getter @Setter String name;
     private @Getter @Setter boolean isBorrowed;
 
     public Disc(String name) {
         this.name = name;
+        this.isBorrowed = true;
     }
 
     @Override
@@ -29,5 +29,10 @@ public class Disc {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
