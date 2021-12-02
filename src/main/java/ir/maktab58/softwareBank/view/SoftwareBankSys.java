@@ -76,7 +76,7 @@ public class SoftwareBankSys {
         bankService = new BankService(numOfEvents, penalty);
     }
 
-    private void getEvents(int numOfEvents, Scanner scanner) {
+    public void getEvents(int numOfEvents, Scanner scanner) {
         List<String[]> eventsStr = new ArrayList<>();
         for (int i = 0; i < numOfEvents; i++) {
             String nextLine = scanner.nextLine();
