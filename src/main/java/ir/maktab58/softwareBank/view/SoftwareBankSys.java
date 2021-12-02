@@ -3,6 +3,8 @@ package ir.maktab58.softwareBank.view;
 import ir.maktab58.softwareBank.models.Admin;
 import ir.maktab58.softwareBank.models.Disc;
 import ir.maktab58.softwareBank.service.BankService;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.Scanner;
  */
 public class SoftwareBankSys {
     Admin admin = new Admin();
-    BankService bankService;
+    private @Getter @Setter BankService bankService;
 
     public void login() {
         System.out.println("********** Welcome **********");
@@ -66,7 +68,7 @@ public class SoftwareBankSys {
         bankService.getMembers().forEach(System.out::println);
     }
 
-    private void initializeNumOfEventsAndPenalty(Scanner scanner) {
+    public void initializeNumOfEventsAndPenalty(Scanner scanner) {
         String firstLine = scanner.nextLine().trim();
         String[] firstLineOfInput = firstLine.split(" ");
         int numOfEvents =  Integer.parseInt(firstLineOfInput[0]);

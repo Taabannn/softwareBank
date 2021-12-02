@@ -18,7 +18,6 @@ public class ShowAdminMenuTest {
     static Stream<Arguments> generateInputLines() {
         return Stream.of(
                 Arguments.of("2 500%s1 1 88 Taban ubuntu%s9 1 88 Taban ubuntu%s1%s2%s4%s3%s")
-                        /*%s1 1 88 Taban ubuntu%s9 1 88 Taban ubuntu%s1%s2%s4%s3*/
         );
     }
 
