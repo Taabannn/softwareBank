@@ -17,8 +17,8 @@ public class SoftwareBankSys {
 
     public void login() {
         System.out.println("********** Welcome **********");
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your username: ");
+        Scanner scanner = new Scanner(System.in);
         String username = scanner.nextLine().trim();
         System.out.println("Please enter your password: ");
         String password = scanner.nextLine().trim();
