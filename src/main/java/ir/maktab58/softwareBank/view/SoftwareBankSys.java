@@ -31,11 +31,11 @@ public class SoftwareBankSys {
         }
     }
 
-    private void showAdminMenu() {
+    public void showAdminMenu() {
         System.out.println("Please enter num of events and amount of fine per day then each event: ");
-        initializeNumOfEventsAndPenalty();
-        getEvents(bankService.getNumOfEvents());
         Scanner scanner = new Scanner(System.in);
+        initializeNumOfEventsAndPenalty(scanner);
+        getEvents(bankService.getNumOfEvents(), scanner);
         boolean exit = false;
         while (!exit) {
             System.out.println("********** Admin Menu **********\n" +
@@ -66,8 +66,7 @@ public class SoftwareBankSys {
         bankService.getMembers().forEach(System.out::println);
     }
 
-    private void initializeNumOfEventsAndPenalty() {
-        Scanner scanner = new Scanner(System.in);
+    private void initializeNumOfEventsAndPenalty(Scanner scanner) {
         String firstLine = scanner.nextLine().trim();
         String[] firstLineOfInput = firstLine.split(" ");
         int numOfEvents =  Integer.parseInt(firstLineOfInput[0]);
@@ -75,9 +74,8 @@ public class SoftwareBankSys {
         bankService = new BankService(numOfEvents, penalty);
     }
 
-    private void getEvents(int numOfEvents) {
+    private void getEvents(int numOfEvents, Scanner scanner) {
         List<String[]> eventsStr = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < numOfEvents; i++) {
             String nextLine = scanner.nextLine();
             String[] tokens = nextLine.split(" ");
