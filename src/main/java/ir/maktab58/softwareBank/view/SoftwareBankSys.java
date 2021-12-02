@@ -62,7 +62,7 @@ public class SoftwareBankSys {
                     .forEach(System.out::println);
     }
 
-    private void showFines() {
+    public void showFines() {
         bankService.calculateFines();
         System.out.println("Fines : ");
         bankService.getMembers().forEach(System.out::println);
