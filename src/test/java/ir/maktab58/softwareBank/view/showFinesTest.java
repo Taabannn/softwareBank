@@ -49,7 +49,7 @@ public class showFinesTest {
 
     @ParameterizedTest
     @MethodSource("generateEvents")
-    public void givenSomeEvents_WhenGetEventsCalls_ThenTheseEventsAreAddedA(int numOfEvents, long penalty, List<String[]> bankEvents) {
+    public void givenSomeEvents_WhenShowFinesCalls_ThenEvensWillBeShown(int numOfEvents, long penalty, List<String[]> bankEvents) {
         softwareBankSys.setBankService(new BankService(numOfEvents, penalty));
         softwareBankSys.getBankService().extractEvents(bankEvents);
         softwareBankSys.showFines();

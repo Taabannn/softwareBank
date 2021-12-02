@@ -54,7 +54,7 @@ public class SoftwareBankSys {
         }
     }
 
-    private void showBorrowedDiscs() {
+    public void showBorrowedDiscs() {
         System.out.println("Borrowed Discs : ");
         bankService.getDiscs()
                     .stream()
