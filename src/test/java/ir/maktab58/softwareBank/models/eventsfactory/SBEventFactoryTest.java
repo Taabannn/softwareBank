@@ -1,15 +1,17 @@
 package ir.maktab58.softwareBank.models.eventsfactory;
 
 import ir.maktab58.softwareBank.exceptions.IllegalEventSateEx;
-import ir.maktab58.softwareBank.models.Borrow;
 import ir.maktab58.softwareBank.models.Date;
 import ir.maktab58.softwareBank.models.Disc;
 import ir.maktab58.softwareBank.models.Person;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.lang.reflect.Member;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,6 +20,26 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Taban Soleymani
  */
 public class SBEventFactoryTest {
+    @BeforeAll
+    public static void init() {
+        System.out.println("In SBEventFactoryTest init...");
+    }
+
+    @AfterAll
+    public static void after() {
+        System.out.println("In SBEventFactoryTest after...");
+    }
+
+    @BeforeEach
+    public void beforeEach() {
+        System.out.println("before each ...");
+    }
+
+    @AfterEach
+    public void afterEach() {
+        System.out.println("after each ...");
+    }
+
     static Stream<Arguments> generateBorrowEvent() {
         return Stream.of(
                 Arguments.of("borrow", new Person("Taban"), new Date(5, 2, 98), new Disc("ubuntu")),

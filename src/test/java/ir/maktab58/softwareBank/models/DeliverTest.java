@@ -1,5 +1,9 @@
 package ir.maktab58.softwareBank.models;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -16,6 +20,26 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @author Taban Soleymani
  */
 public class DeliverTest {
+    @BeforeAll
+    public static void init() {
+        System.out.println("In DeliverTest init...");
+    }
+
+    @AfterAll
+    public static void after() {
+        System.out.println("In DeliverTest after...");
+    }
+
+    @BeforeEach
+    public void beforeEach() {
+        System.out.println("before each ...");
+    }
+
+    @AfterEach
+    public void afterEach() {
+        System.out.println("after each ...");
+    }
+
     @Mock
     Person person;
 

@@ -4,6 +4,10 @@ import ir.maktab58.softwareBank.models.Date;
 import ir.maktab58.softwareBank.models.Disc;
 import ir.maktab58.softwareBank.models.Person;
 import ir.maktab58.softwareBank.models.eventsfactory.BorrowEvent;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -20,8 +24,28 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @author Taban Soleymani
  */
 public class AddEventWhenDiscNotExistedTest {
+    @BeforeAll
+    public static void init() {
+        System.out.println("In AddEventWhenDiscNotExistedTest init...");
+    }
+
+    @AfterAll
+    public static void after() {
+        System.out.println("In AddEventWhenDiscNotExistedTest after...");
+    }
+
     @Mock
     BankService bankService = new BankService(4, 500);
+
+    @BeforeEach
+    public void beforeEach() {
+        System.out.println("before each ...");
+    }
+
+    @AfterEach
+    public void afterEach() {
+        System.out.println("after each ...");
+    }
 
     static Stream<Arguments> generateMembersAndDiscs() {
         List<Person> members = new ArrayList<>();
@@ -44,7 +68,7 @@ public class AddEventWhenDiscNotExistedTest {
         int memberIndex = bankService.getMembers().indexOf(member);
         bankService.addEventWhenDiscNotExisted(dateOfEvent, member, disc);
         assertTrue(bankService.getEvents().contains(new BorrowEvent(member, dateOfEvent, disc)));
-        assertEquals(memberIndex ,bankService.getMembers().indexOf(member));
+        assertEquals(memberIndex, bankService.getMembers().indexOf(member));
         assertTrue(bankService.getDiscs().contains(disc));
     }
 }
