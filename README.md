@@ -1,22 +1,29 @@
 # softwareBank
 This is a simple simulation of university software bank.
 
-## Thank You!
-Please ⭐️ softwareBank repo and share it with others.
-
 ### Requirements 🔧
 * Java version 8 or higher.
 * Apache Maven version 3.8.4.
 
-### Installation 🔌
-1. Press the **Fork** button (top right the page) to save copy of this project on your account.
+### How to contribute to this repository 
+. Press the **Fork** button in order to save copy of this repo on your account.
 
-2. Download the repository files (project) from the download section or clone this project by typing in the bash the following command:
+. Download the files by pressing download button or clone this repo by the the following command in your git bash:
 
        git clone https://github.com/Taabannn/softwareBank.git
-3. Imported it in your Java IDE.
-4. Run the application
+       
+. Open project in your Java IDE.
 
-### Contributing 💡
-If you want to contribute to this project and make it better with new ideas, your pull request is welcomed.
-If you find any issue just put it in the repository issue section, thank you.
+. Make a new branch.
+ 
+       git checkout -b branch-name
+. Make new changes of repository on new branch.
+
+. Push the changes.
+
+       git add .
+       git commit -m "Your commit Message"
+       git push origin branch-name
+. Make a pull request.
+
+. ⭐ this repository.
