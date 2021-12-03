@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="0" failures="0" name="ir.maktab58.softwareBank.service.DistinctEventTest" time="0" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ir.maktab58.softwareBank.TestRunner" time="0.02" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.2"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -60,4 +60,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+  <testcase classname="JUnit Jupiter" name="JUnit Jupiter" time="0.016"/>
+  <testcase classname="JUnit Platform Suite" name="JUnit Platform Suite" time="0.003"/>
+  <testcase classname="JUnit Vintage" name="JUnit Vintage" time="0.001"/>
 </testsuite>

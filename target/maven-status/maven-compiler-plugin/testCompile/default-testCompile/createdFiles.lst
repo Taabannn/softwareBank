@@ -1,9 +1,9 @@
 ir\maktab58\softwareBank\models\ValidateDateTest.class
+ir\maktab58\softwareBank\TestRunner.class
 ir\maktab58\softwareBank\service\AddEventWhenDiscNotExistedTest.class
 ir\maktab58\softwareBank\models\IsUserAdminTest.class
 ir\maktab58\softwareBank\service\DistinctEventTest.class
 ir\maktab58\softwareBank\view\ShowFinesTest.class
-ir\maktab58\softwareBank\view\SoftwareBankSuiteTest.class
 ir\maktab58\softwareBank\view\InitializeNumOfEventsAndPenaltyTest.class
 ir\maktab58\softwareBank\models\BorrowTest.class
 ir\maktab58\softwareBank\service\AddEventWhenMemberNotExistedTest.class
