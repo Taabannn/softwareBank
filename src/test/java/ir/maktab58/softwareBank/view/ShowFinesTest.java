@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Taban Soleymani
  */
-public class showFinesTest {
+public class ShowFinesTest {
     @Mock
     SoftwareBankSys softwareBankSys = new SoftwareBankSys();
 

@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author Taban Soleymani
  */
-public class getEventsTest {
+public class GetEventsTest {
     @Mock
     SoftwareBankSys softwareBankSys = new SoftwareBankSys();
 

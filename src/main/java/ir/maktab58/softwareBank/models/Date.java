@@ -15,7 +15,7 @@ public class Date implements Comparable<Date> {
     public static boolean validateDate(int year, int month, int day) {
         if (month <= 0 || month > 12)
             throw new IllegalArgumentException("Wrong value for month, it must be from 1 to 12");
-        if (day <= 0 || day > 32)
+        if (day <= 0 || day >= 32)
             throw new IllegalArgumentException("Wrong value for day, it must be from 1 to 31");
         if (year < 1111 || year > 9999)
             throw new IllegalArgumentException("Wrong value for Year");
